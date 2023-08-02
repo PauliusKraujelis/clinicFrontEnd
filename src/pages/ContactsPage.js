@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const ContactsPage = () => {
-  // Mock clinic data
   const clinics = [
     {
       id: 1,

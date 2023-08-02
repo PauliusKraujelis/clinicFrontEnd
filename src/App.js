@@ -6,6 +6,7 @@ import ClinicsPage from './pages/ClinicsPage';
 import ProceduresPage from './pages/ProceduresPage';
 import AppointmentsPage from './pages/AppointmentsPage';
 import ContactsPage from './pages/ContactsPage';
+import PatientEdit from "./pages/PatientEdit";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path='/procedures' exact={true} component={ProceduresPage}/>
       <Route path='/appointments' exact={true} component={AppointmentsPage}/>
       <Route path='/contacts' exact={true} component={ContactsPage}/>
+      <Route path='/patients/:id' component={PatientEdit}/>
     </Switch>
   </Router>
   );

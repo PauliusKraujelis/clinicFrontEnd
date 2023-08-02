@@ -16,21 +16,21 @@ function PatientsPage() {
     setPatients(data);
   }
 
-  async function remove(id){
+  async function remove(id) {
     console.log(`Making DELETE request with id ` + {id});
-    await fetch(`/api/patients${id}`,{        
-        method: 'DELETE',
-        headers:{
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-    }).then( () => {
-                console.log("Got response");
-                let updatedPatients = [...patients].filter(i => i.id !== id);
-                setPatients(updatedPatients);
-            }
-        )    
-    ;
+    await fetch(`/api/patients/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(() => {
+      console.log("Got response");
+      let updatedPatients = [...patients].filter(i => i.id !== id);
+      setPatients(updatedPatients);
+    }
+    )
+      ;
   }
 
   useEffect(() => {
@@ -46,13 +46,14 @@ function PatientsPage() {
         <td>{patient.age}</td>
         <td>
           <ButtonGroup>
-            <Button size="sm" color="primary" tag={Link} to={`/patients/${patient.id}`}>Edit</Button>
-            <Button size="sm" color="danger" onClick={() => remove(patients.id)}>Delete</Button>
+            <Link to={`/patients/${patient.id}/edit`}>Edit</Link>
+            <Button size="sm" color="danger" onClick={() => remove(patient.id)}>Delete</Button>
           </ButtonGroup>
         </td>
       </tr>
     );
   });
+  
 
   return (
     <div>
@@ -61,7 +62,7 @@ function PatientsPage() {
         <div className="right-side">
           <Container fluid>
             <div className="float-end mt-2">
-              <Button color="success" tag={Link} to="/clients/new">Add Patient</Button>
+              <Button color="success" tag={Link} to="/patients/new">Add Patient</Button>
             </div>
             <h2>Patients</h2>
 

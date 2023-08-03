@@ -7,6 +7,7 @@ import ProceduresPage from './pages/ProceduresPage';
 import AppointmentsPage from './pages/AppointmentsPage';
 import ContactsPage from './pages/ContactsPage';
 import PatientEdit from "./pages/PatientEdit";
+import AppointmentEdit from "./pages/AppointmentEdit";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Route path='/appointments' exact={true} component={AppointmentsPage}/>
       <Route path='/contacts' exact={true} component={ContactsPage}/>
       <Route path='/patients/:id' component={PatientEdit}/>
+      <Route path='/appointments/:id' component={AppointmentEdit}/>
     </Switch>
   </Router>
   );

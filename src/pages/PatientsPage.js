@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Button, ButtonGroup, Container, Table } from 'reactstrap';
+import { Button, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -10,14 +11,18 @@ function PatientsPage() {
 
   async function loadPatients() {
     const response = await fetch("/api/patients");
-    console.log(response);
     const data = await response.json();
-    console.log(data);
     setPatients(data);
   }
 
+  const handleDelete = (id) => {
+    const isConfirmed = window.confirm('Please cofirm patient deletion!');
+    if (isConfirmed) {
+      remove(id);
+    }
+  };
+
   async function remove(id) {
-    console.log(`Making DELETE request with id ` + {id});
     await fetch(`/api/patients/${id}`, {
       method: 'DELETE',
       headers: {
@@ -25,12 +30,9 @@ function PatientsPage() {
         'Content-Type': 'application/json'
       }
     }).then(() => {
-      console.log("Got response");
-      let updatedPatients = [...patients].filter(i => i.id !== id);
+      let updatedPatients = patients.filter(patient => patient.id !== id);
       setPatients(updatedPatients);
-    }
-    )
-      ;
+    });
   }
 
   useEffect(() => {
@@ -44,16 +46,20 @@ function PatientsPage() {
         <td>{patient.firstName}</td>
         <td>{patient.lastName}</td>
         <td>{patient.age}</td>
+        <td>{patient.gender}</td>
         <td>
-          <ButtonGroup>
-            <Link to={`/patients/${patient.id}/edit`}>Edit</Link>
-            <Button size="sm" color="danger" onClick={() => remove(patient.id)}>Delete</Button>
-          </ButtonGroup>
+          <div className='d-inline-block'>
+            <ButtonGroup>
+              <Link to={`/patients/${patient.id}/edit`}>
+                <Button>Edit</Button>
+              </Link>
+              <Button onClick={() => handleDelete(patient.id)}>Delete</Button>
+            </ButtonGroup>
+          </div>
         </td>
       </tr>
     );
   });
-  
 
   return (
     <div>
@@ -62,17 +68,21 @@ function PatientsPage() {
         <div className="right-side">
           <Container fluid>
             <div className="float-end mt-2">
-              <Button color="success" tag={Link} to="/patients/new">Add Patient</Button>
+
+              <Link to={"/patients/new"}>
+                <Button color="primary" size="sm">Add Patient</Button>
+              </Link>
             </div>
             <h2>Patients</h2>
 
             <Table className="mt-4 text-dark">
               <thead>
                 <tr>
-                  <th width="30%">id</th>
-                  <th width="30%">First Name</th>
-                  <th width="30%">Last Name</th>
-                  <th width="40%">Age</th>
+                  <th width="20%">id</th>
+                  <th width="20%">First Name</th>
+                  <th width="20%">Last Name</th>
+                  <th width="20%">Age</th>
+                  <th width="20%">Gender</th>
                 </tr>
               </thead>
               <tbody>

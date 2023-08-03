@@ -15,7 +15,7 @@ function PatientEdit(props) {
 
   useEffect(() => {
     loadPatient();
-  }, []);
+  }, );
 
   async function loadPatient() {
     if (props.match.params.id !== 'new') {
@@ -69,12 +69,14 @@ function PatientEdit(props) {
           </FormGroup>
           <FormGroup>
             <Label for="age">Age</Label>
-            <Input type="number" name="age" id="age" value={item.age || 0}
+            <Input type="number" name="age" id="age" value={item.age || ''}
               onChange={handleChange} autoComplete="age" />
           </FormGroup>
           <FormGroup>
-            <Button color="primary" type="submit">Save</Button>{' '}
-            <Button color="secondary" tag={Link} to="/patients">Cancel</Button>
+            <Button>Save</Button>{' '}
+            <Link to={`/patients`}>
+              <Button>Cancel</Button>
+            </Link>
           </FormGroup>
         </Form>
       </Container>

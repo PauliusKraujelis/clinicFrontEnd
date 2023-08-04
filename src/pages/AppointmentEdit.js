@@ -9,12 +9,12 @@ function AppointmentEdit(props) {
         patientId: '',
     });
 
-    const [patients, setPatients] = useState([]);
+    const [appointments, setAppointments] = useState([]); // State to store the list of appointments
 
     useEffect(() => {
         loadAppointment();
-        loadPatients();
-    },[]);
+        loadAppointments(); // Fetch the list of existing appointments
+    }, []);
 
     async function loadAppointment() {
         if (props.match.params.id !== 'new') {
@@ -24,10 +24,10 @@ function AppointmentEdit(props) {
         }
     }
 
-    async function loadPatients() {
-        const response = await fetch("/api/patients");
+    async function loadAppointments() {
+        const response = await fetch('/api/appointments');
         const data = await response.json();
-        setPatients(data);
+        setAppointments(data);
     }
 
     async function handleSubmit(event) {
@@ -97,9 +97,9 @@ function AppointmentEdit(props) {
                             onChange={handleChange}
                         >
                             <option value="">Select Patient</option>
-                            {patients.map((patient) => (
-                                <option key={patient.id} value={patient.id}>
-                                    {`${patient.firstName} ${patient.lastName}`}
+                            {appointments.map((appointment) => (
+                                <option key={appointment.id} value={appointment.id}>
+                                    {`${appointment.dateTime} - ${appointment.location}`}
                                 </option>
                             ))}
                         </Input>

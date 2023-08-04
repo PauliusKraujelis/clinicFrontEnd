@@ -15,7 +15,7 @@ function PatientEdit(props) {
 
   useEffect(() => {
     loadPatient();
-  }, );
+  }, []);
 
   async function loadPatient() {
     if (props.match.params.id !== 'new') {

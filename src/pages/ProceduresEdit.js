@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 import { Link, withRouter } from 'react-router-dom';
+import './EditSettings.css';
+import { useTranslation } from 'react-i18next';
 
 function ProcedureEdit(props) {
+    const { t } = useTranslation();
     const [procedure, setProcedure] = useState({
         name: '',
         description: '',
@@ -79,12 +82,13 @@ function ProcedureEdit(props) {
 
     return (
         <div>
-            <Container>
-                <h2>{procedure.id ? 'Edit Procedure' : 'Add Procedure'}</h2>
+            <Container className="edit-container">
+                <h2>{procedure.id ? t('proceduresEdit.editProcedure') : t('proceduresEdit.addProcedure')}</h2>
                 <Form onSubmit={handleSubmit}>
                     <FormGroup>
-                        <Label for="name">Name</Label>
+                        <Label for="name">{t('proceduresEdit.name')}</Label>
                         <Input
+                            className="form-control"
                             type="text"
                             name="name"
                             id="name"
@@ -94,7 +98,7 @@ function ProcedureEdit(props) {
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="description">Description</Label>
+                        <Label for="description">{t('proceduresEdit.discription')}</Label>
                         <Input
                             type="text"
                             name="description"
@@ -105,7 +109,7 @@ function ProcedureEdit(props) {
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="price">Price</Label>
+                        <Label for="price">{t('proceduresEdit.price')}</Label>
                         <Input
                             type="text"
                             name="price"
@@ -116,7 +120,7 @@ function ProcedureEdit(props) {
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="appointmentId">Appointment</Label>
+                        <Label for="appointmentId">{t('proceduresEdit.appointment')}</Label>
                         <Input
                             type="select"
                             name="appointmentId"
@@ -124,7 +128,7 @@ function ProcedureEdit(props) {
                             value={procedure.appointmentId}
                             onChange={handleChange}
                         >
-                            <option value="">Select Appointment</option>
+                            <option value="">{t('proceduresEdit.appointmentSelect')}</option>
                             {appointments.map((appointment) => (
                                 <option key={appointment.id} value={appointment.id}>
                                     {`${appointment.dateTime} - ${appointment.location} - ${appointment.patient.firstName
@@ -132,18 +136,17 @@ function ProcedureEdit(props) {
                                 </option>
                             ))}
                         </Input>
-                    </FormGroup>
-
-                    <FormGroup>
-                        <Button>Save</Button>{' '}
-                        <Link to="/procedures">
-                            <Button>Cancel</Button>
-                        </Link>
-                    </FormGroup>
-                </Form>
-            </Container>
-        </div>
-    );
+                        </FormGroup>
+          <FormGroup className="button-group">
+            <Button className="save-button">{t('buttons.saveButton')}</Button>{' '}
+            <Link to="/procedures">
+              <Button className="cancel-button">{t('buttons.cancelButton')}</Button>
+            </Link>
+          </FormGroup>
+        </Form>
+      </Container>
+    </div>
+  );
 }
 
 export default withRouter(ProcedureEdit);

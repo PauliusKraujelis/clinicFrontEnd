@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Button, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import { useTranslation } from 'react-i18next';
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 function AppointmentsPage() {
+  const { t } = useTranslation();
   const [appointments, setAppointments] = useState([]);
 
   async function loadAppointments() {
@@ -50,9 +52,9 @@ function AppointmentsPage() {
           <div className='d-inline-block'>
             <ButtonGroup>
               <Link to={`/appointments/${appointment.id}/edit`}>
-                <Button>Edit</Button>
+                <Button className="edit-button">{t('buttons.editButton')}</Button>
               </Link>
-              <Button onClick={() => handleDelete(appointment.id)}>Delete</Button>
+              <Button className="delete-button" onClick={() => handleDelete(appointment.id)}>{t('buttons.deleteButton')}</Button>
             </ButtonGroup>
           </div>
         </td>
@@ -67,20 +69,21 @@ function AppointmentsPage() {
         <div className="right-side">
           <Container fluid>
             <div className="float-end mt-2">
-
               <Link to={"/appointments/new"}>
-                <Button color="primary" size="sm">Add Appointment</Button>
+                <Button className="add-button" style={{float: 'right'}} color="primary" size="sm">
+                  {t('appointmentsPage.addButton')}
+                </Button>
               </Link>
             </div>
-            <h2>Appointments</h2>
+            <h2>{t('appointmentsPage.title')}</h2>
 
             <Table className="mt-4 text-dark">
               <thead>
                 <tr>
-                  <th width="10%">id</th>
-                  <th width="30%">Date and Time</th>
-                  <th width="30%">Location</th>
-                  <th width="30%">Patient</th>
+                  <th width="10%">{t('appointmentsPage.id')}</th>
+                  <th width="30%">{t('appointmentsPage.dateTime')}</th>
+                  <th width="30%">{t('appointmentsPage.location')}</th>
+                  <th width="30%">{t('appointmentsPage.patient')}</th>
                 </tr>
               </thead>
               <tbody>

@@ -1,0 +1,25 @@
+/* languageSelector.css */
+.language-selector {
+    display: flex;
+    flex-direction: column; /* Arrange buttons vertically */
+    align-items: flex-start; /* Align buttons to the left */
+    margin-top: 10px; /* Add some spacing between buttons and navbar */
+  }
+  
+  .lan-button {
+    background-color: transparent;
+    color: #007bff;
+    padding: 2px 4px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    margin: 5px 0; /* Add spacing between buttons */
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition on hover */
+  }
+  
+  .lan-button:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
+  }
+  

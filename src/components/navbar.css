@@ -1,22 +1,52 @@
+/* navbar.css */
 .navbar {
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .nav-button {
-    background-color: #555;
-    color: #fff;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    margin: 0 5px;
-  }
-  
-  .nav-logo img {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 2px solid #007bff;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.nav-logo {
+    display: flex; /* Ensure the logo and text are displayed in a row */
+    align-items: center; /* Vertically align the logo and text */
+}
+
+.nav-logo img {
     height: 30px;
-  }
-  
+    margin-right: 8px; /* Add some spacing between the logo and text */
+}
+
+.nav-logo-text {
+    font-weight: bold;
+    color: #555;
+}
+
+.nav-button {
+  background-color: transparent;
+  color: #007bff;
+  padding: 8px 16px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  margin: 0 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+}
+
+.nav-logo img {
+  height: 30px;
+}
+
+.nav-language {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,59 @@
+{
+  "languageSelector.english": "En",
+  "languageSelector.lithuanian": "Lt",
+
+  "navbar.home": "Pradžia",
+  "navbar.patient": "Pacientai",
+  "navbar.appointments": "Vizitai",
+  "navbar.procedures": "Procedūros",
+  "navbar.contacts": "Kontaktai",
+
+  "patientsPage.title": "Pacientai",
+  "patientsPage.id": "ID",
+  "patientsPage.firstName": "Vardas",
+  "patientsPage.lastName": "Pavardė",
+  "patientsPage.age": "Amžius",
+  "patientsPage.gender": "Lytis",
+  "patientsPage.addButton": "Pridėti Pacientą",
+
+  "procedurePage.id": "ID",
+  "procedurePage.name": "Pavadinimas",
+  "procedurePage.description": "Aprašymas",
+  "procedurePage.price": "Kaina",
+  "procedurePage.appointmentID": "Vizito ID",
+  "procedurePage.addButton": "Pridėti Procedūrą",
+
+  "appointmentsPage.title": "Vizitai",
+  "appointmentsPage.id": "ID",
+  "appointmentsPage.dateTime": "Data ir Laikas",
+  "appointmentsPage.location": "Vieta",
+  "appointmentsPage.patient": "Pacientas",
+  "appointmentsPage.addButton": "Pridėti Vizitą",
+  
+  "patientEdit.editPatient": "Redaguoti pacientą",
+  "patientEdit.addPatient": "Pridėti pacientą",
+  "patientEdit.firstName": "Vardas",
+  "patientEdit.lastName": "Pavardė",
+  "patientEdit.gender": "Lytis",
+  "patientEdit.age": "Amžius",
+
+  "appointmentsEdit.editAppointment": "Redaguoti Vizitą",
+  "appointmentsEdit.addAppointment": "Prideti Vizitą",
+  "appointmentsEdit.dateTime": "Data ir laikas",
+  "appointmentsEdit.location": "Vizito vieta",
+  "appointmentsEdit.patient": "Pacientas ",
+
+  "proceduresEdit.editProcedure": "Redaguoti procedūrą",
+  "proceduresEdit.addProcedure": "Prideti procedūrą",
+  "proceduresEdit.discription": "Aprašymas",
+  "proceduresEdit.name": "Vardas",
+  "proceduresEdit.price": "Kaina",
+  "proceduresEdit.appointment": "Vizitas ",
+  "proceduresEdit.appointmentSelect": "Pasirinkti vizitą",
+
+  "buttons.saveButton": "Išsaugoti",
+  "buttons.cancelButton": "Atšaukti",
+  "buttons.editButton": "Keisti",
+  "buttons.deleteButton": "Trinti"
+
+}

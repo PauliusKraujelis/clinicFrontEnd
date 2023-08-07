@@ -1,0 +1,60 @@
+{
+  "languageSelector.english": "En",
+  "languageSelector.lithuanian": "Lt",
+
+  "navbar.home": "Home",
+  "navbar.patient": "Patient",
+  "navbar.appointments": "Appointments",
+  "navbar.procedures": "Procedures",
+  "navbar.contacts": "Contacts",
+  
+  "patientsPage.title": "Patients",
+  "patientsPage.id": "ID",
+  "patientsPage.firstName": "First Name",
+  "patientsPage.lastName": "Last Name",
+  "patientsPage.age": "Age",
+  "patientsPage.gender": "Gender",
+  "patientsPage.addButton": "Add Patient",
+
+  "procedurePage.title": "Procedures",
+  "procedurePage.id": "ID",
+  "procedurePage.name": "Name",
+  "procedurePage.description": "Description",
+  "procedurePage.price": "Price",
+  "procedurePage.appointmentID": "Appointment ID",
+  "procedurePage.addButton": "Add Procedure",
+
+  "appointmentsPage.title": "Appointments",
+  "appointmentsPage.id": "ID",
+  "appointmentsPage.dateTime": "Date and Time",
+  "appointmentsPage.location": "Location",
+  "appointmentsPage.patient": "Patient",
+  "appointmentsPage.addButton": "Add Appointment",
+
+  "patientEdit.editPatient": "Edit Patient",
+  "patientEdit.addPatient": "Add Patient",
+  "patientEdit.firstName": "First Name",
+  "patientEdit.lastName": "Last Name",
+  "patientEdit.gender": "Gender",
+  "patientEdit.age": "Age",
+
+  "appointmentsEdit.editAppointment": "Edit appointment",
+  "appointmentsEdit.addAppointment": "Add appointment",
+  "appointmentsEdit.dateTime": "Date and time",
+  "appointmentsEdit.location": "Location",
+  "appointmentsEdit.patient": "Pacient ",
+
+  "proceduresEdit.editProcedure": "Edit procedure",
+  "proceduresEdit.addProcedure": "Add procedure",
+  "proceduresEdit.discription": "Discription",
+  "proceduresEdit.name": "Name",
+  "proceduresEdit.price": "Price",
+  "proceduresEdit.appointment": "Appointment ",
+  "proceduresEdit.appointmentSelect": "Appointment Select",
+
+  "buttons.saveButton": "Save",
+  "buttons.cancelButton": "Cancel",
+  "buttons.editButton": "Edit",
+  "buttons.deleteButton": "Delete"
+
+}

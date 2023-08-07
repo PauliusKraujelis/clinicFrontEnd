@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 import { Link, withRouter } from 'react-router-dom';
+import './EditSettings.css';
+import { useTranslation } from 'react-i18next';
 
 function AppointmentEdit(props) {
+    const { t } = useTranslation();
     const [appointment, setAppointment] = useState({
         dateTime: '',
         location: '',
         patientId: '',
     });
 
-    const [appointments, setAppointments] = useState([]); // State to store the list of appointments
+    const [patients, setPatients] = useState([]);
 
     useEffect(() => {
         loadAppointment();
-        loadAppointments(); // Fetch the list of existing appointments
+        loadPatients();
     }, []);
 
     async function loadAppointment() {
@@ -24,10 +27,10 @@ function AppointmentEdit(props) {
         }
     }
 
-    async function loadAppointments() {
-        const response = await fetch('/api/appointments');
+    async function loadPatients() {
+        const response = await fetch("/api/patients");
         const data = await response.json();
-        setAppointments(data);
+        setPatients(data);
     }
 
     async function handleSubmit(event) {
@@ -62,11 +65,11 @@ function AppointmentEdit(props) {
 
     return (
         <div>
-            <Container>
-                <h2>{appointment.id ? 'Edit Appointment' : 'Add Appointment'}</h2>
+            <Container className="edit-container">
+                <h2>{appointment.id ? t('appointmentsEdit.editAppointment') : t('appointmentsEdit.addAppointment')}</h2>
                 <Form onSubmit={handleSubmit}>
                     <FormGroup>
-                        <Label for="dateTime">Date and Time</Label>
+                        <Label for="dateTime">{t('appointmentsEdit.dateTime')}</Label>
                         <Input
                             type="datetime-local"
                             name="dateTime"
@@ -77,7 +80,7 @@ function AppointmentEdit(props) {
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="location">Location</Label>
+                        <Label for="location">{t('appointmentsEdit.location')}</Label>
                         <Input
                             type="text"
                             name="location"
@@ -88,7 +91,7 @@ function AppointmentEdit(props) {
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="patientId">Patient</Label>
+                        <Label for="patientId">{t('appointmentsEdit.patient')}</Label>
                         <Input
                             type="select"
                             name="patientId"
@@ -97,17 +100,18 @@ function AppointmentEdit(props) {
                             onChange={handleChange}
                         >
                             <option value="">Select Patient</option>
-                            {appointments.map((appointment) => (
-                                <option key={appointment.id} value={appointment.id}>
-                                    {`${appointment.dateTime} - ${appointment.location}`}
+                            {patients.map((patient) => (
+                                <option key={patient.id} value={patient.id}>
+                                    {`${patient.firstName} ${patient.lastName}`}
                                 </option>
                             ))}
                         </Input>
                     </FormGroup>
-                    <FormGroup>
-                        <Button>Save</Button>{' '}
-                        <Link to={`/appointments`}>
-                            <Button>Cancel</Button>
+
+                    <FormGroup className="button-group">
+                        <Button className="save-button">{t('buttons.saveButton')}</Button>{' '}
+                        <Link to="/appointments">
+                            <Button className="cancel-button">{t('buttons.cancelButton')}</Button>
                         </Link>
                     </FormGroup>
                 </Form>

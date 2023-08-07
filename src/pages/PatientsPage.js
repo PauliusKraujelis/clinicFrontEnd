@@ -2,11 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { Button, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import { useTranslation } from 'react-i18next';
+import './PageSettings.css';
+
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+
+
+
 function PatientsPage() {
+  const { t } = useTranslation();
   const [patients, setPatients] = useState([]);
 
   async function loadPatients() {
@@ -51,9 +58,9 @@ function PatientsPage() {
           <div className='d-inline-block'>
             <ButtonGroup>
               <Link to={`/patients/${patient.id}/edit`}>
-                <Button>Edit</Button>
+                <Button className="edit-button">{t('buttons.editButton')}</Button>
               </Link>
-              <Button onClick={() => handleDelete(patient.id)}>Delete</Button>
+              <Button className="delete-button" onClick={() => handleDelete(patient.id)}>{t('buttons.deleteButton')}</Button>
             </ButtonGroup>
           </div>
         </td>
@@ -68,21 +75,21 @@ function PatientsPage() {
         <div className="right-side">
           <Container fluid>
             <div className="float-end mt-2">
-
               <Link to={"/patients/new"}>
-                <Button color="primary" size="sm">Add Patient</Button>
+                <Button className="add-button" style={{float: 'right'}} color="primary" size="sm">
+                  {t('patientsPage.addButton')}
+                </Button>
               </Link>
             </div>
-            <h2>Patients</h2>
-
+            <h2>{t('patientsPage.title')}</h2>
             <Table className="mt-4 text-dark">
               <thead>
                 <tr>
-                  <th width="20%">id</th>
-                  <th width="20%">First Name</th>
-                  <th width="20%">Last Name</th>
-                  <th width="20%">Age</th>
-                  <th width="20%">Gender</th>
+                  <th width="20%">{t('patientsPage.id')}</th>
+                  <th width="20%">{t('patientsPage.firstName')}</th>
+                  <th width="20%">{t('patientsPage.lastName')}</th>
+                  <th width="20%">{t('patientsPage.age')}</th>
+                  <th width="20%">{t('patientsPage.gender')}</th>
                 </tr>
               </thead>
               <tbody>

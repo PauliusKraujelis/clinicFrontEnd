@@ -111,7 +111,7 @@ function ProcedureEdit(props) {
                     <FormGroup>
                         <Label for="price">{t('proceduresEdit.price')}</Label>
                         <Input
-                            type="text"
+                            type="number"
                             name="price"
                             id="price"
                             value={procedure.price}

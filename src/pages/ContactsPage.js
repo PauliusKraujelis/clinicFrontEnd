@@ -1,8 +1,10 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { useTranslation } from 'react-i18next';
 
 const ContactsPage = () => {
+  const { t } = useTranslation();
   const clinics = [
     {
       id: 1,
@@ -35,7 +37,7 @@ const ContactsPage = () => {
       <Navbar />
       <div className="container">
         <div className="right-side">
-          <h2>Contacts Page</h2>
+          <h2>{t('contactsPage.title')}</h2>
           <ul>
             {clinics.map((clinic) => (
               <li key={clinic.id}>

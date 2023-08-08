@@ -30,26 +30,31 @@
   "appointmentsPage.patient": "Pacientas",
   "appointmentsPage.addButton": "Pridėti Vizitą",
   
-  "patientEdit.editPatient": "Redaguoti pacientą",
-  "patientEdit.addPatient": "Pridėti pacientą",
+  "patientEdit.editPatient": "Redaguoti Pacientą",
+  "patientEdit.addPatient": "Pridėti Pacientą",
   "patientEdit.firstName": "Vardas",
   "patientEdit.lastName": "Pavardė",
   "patientEdit.gender": "Lytis",
   "patientEdit.age": "Amžius",
 
   "appointmentsEdit.editAppointment": "Redaguoti Vizitą",
-  "appointmentsEdit.addAppointment": "Prideti Vizitą",
+  "appointmentsEdit.addAppointment": "Pridėti Vizitą",
   "appointmentsEdit.dateTime": "Data ir laikas",
   "appointmentsEdit.location": "Vizito vieta",
   "appointmentsEdit.patient": "Pacientas ",
 
   "proceduresEdit.editProcedure": "Redaguoti procedūrą",
-  "proceduresEdit.addProcedure": "Prideti procedūrą",
+  "proceduresEdit.addProcedure": "Pridėti procedūrą",
   "proceduresEdit.discription": "Aprašymas",
-  "proceduresEdit.name": "Vardas",
+  "proceduresEdit.name": "Procedūros pavadinimas",
   "proceduresEdit.price": "Kaina",
   "proceduresEdit.appointment": "Vizitas ",
   "proceduresEdit.appointmentSelect": "Pasirinkti vizitą",
+
+  "contactsPage.title": "Kontaktai",
+
+  "footerElement.email": "Elektroninis paštas:",
+  "footerElement.phone": "Telefonas:",
 
   "buttons.saveButton": "Išsaugoti",
   "buttons.cancelButton": "Atšaukti",

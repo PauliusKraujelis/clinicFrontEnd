@@ -46,11 +46,16 @@
 
   "proceduresEdit.editProcedure": "Edit procedure",
   "proceduresEdit.addProcedure": "Add procedure",
-  "proceduresEdit.discription": "Discription",
-  "proceduresEdit.name": "Name",
+  "proceduresEdit.discription": "Description",
+  "proceduresEdit.name": "Procedure name",
   "proceduresEdit.price": "Price",
   "proceduresEdit.appointment": "Appointment ",
   "proceduresEdit.appointmentSelect": "Appointment Select",
+
+  "contactsPage.title": "Contacts Page",
+
+  "footerElement.email": "Email:",
+  "footerElement.phone": "Phone:",
 
   "buttons.saveButton": "Save",
   "buttons.cancelButton": "Cancel",

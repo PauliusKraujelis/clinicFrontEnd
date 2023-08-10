@@ -1,9 +1,10 @@
 import React from 'react';
+import LoginForm from './LoginForm';
 
 const LoginRegistration = () => {
   return (
     <div>
-      {/* Your login and registration form goes here */}
+      <LoginForm />
     </div>
   );
 };

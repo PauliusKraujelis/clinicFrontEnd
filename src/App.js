@@ -10,6 +10,7 @@ import ContactsPage from './pages/ContactsPage';
 import PatientEdit from "./pages/PatientEdit";
 import AppointmentEdit from "./pages/AppointmentEdit";
 import ProceduresEdit from './pages/ProceduresEdit';
+import LoginForm from './components/LoginForm';
 
 function App() {
   return (
@@ -24,6 +25,11 @@ function App() {
           <Route path='/patients/:id' component={PatientEdit}/>
           <Route path='/appointments/:id' component={AppointmentEdit}/>
           <Route path='/procedures/:id' component={ProceduresEdit}/>
+
+        <Route path="/login" component={LoginForm} />
+        <Route path="/index" component={PatientsPage} />
+        <Route path="/admin" component={PatientsPage} />
+
         </Switch>
       </Router>
     </I18nextProvider>

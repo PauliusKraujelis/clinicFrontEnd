@@ -57,9 +57,21 @@
   "footerElement.email": "Email:",
   "footerElement.phone": "Phone:",
 
+  "logingForms.login": "Login",
+  "logingForms.register": "Register",
+
+  "logingForms.email": "Email:",
+  "logingForms.password": "Password:",
+  "logingForms.firstName": "First Name:",
+  "logingForms.lastName": "Last Name:",
+
   "buttons.saveButton": "Save",
   "buttons.cancelButton": "Cancel",
   "buttons.editButton": "Edit",
-  "buttons.deleteButton": "Delete"
+  "buttons.deleteButton": "Delete",
+
+  "buttons.registerButton": "Register",
+  "buttons.loginButton": "Login",
+  "buttons.LogoutButton": "Logout"
 
 }

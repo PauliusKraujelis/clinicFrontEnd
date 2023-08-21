@@ -39,7 +39,6 @@ function ProcedureEdit(props) {
             return !proceduresData.some((procedure) => procedure.appointment?.id === appointment.id);
         });
 
-        // Fetch patients for each appointment
         for (const appointment of filteredAppointments) {
             const patientResponse = await fetch(`/api/patients/${appointment.patientId}`);
             const patientData = await patientResponse.json();

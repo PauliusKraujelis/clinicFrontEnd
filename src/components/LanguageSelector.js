@@ -15,13 +15,13 @@ const LanguageSelector = () => {
     <div className="language-selector">
       <ButtonGroup>
       <button
-        className="lan-button" // Apply the same button style as in the navbar
+        className="lan-button" 
         onClick={() => handleLanguageChange('en')}
       >
         {t('languageSelector.english')}
       </button>
       <button
-        className="lan-button" // Apply the same button style as in the navbar
+        className="lan-button" 
         onClick={() => handleLanguageChange('lt')}
       >
         {t('languageSelector.lithuanian')}

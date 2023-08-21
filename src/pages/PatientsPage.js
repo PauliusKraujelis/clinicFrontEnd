@@ -76,7 +76,7 @@ function PatientsPage() {
           <Container fluid>
             <div className="float-end mt-2">
               <Link to={"/patients/new"}>
-                <Button className="add-button" style={{float: 'right'}} color="primary" size="sm">
+                <Button className="add-button" style={{ float: 'right' }} color="primary" size="sm">
                   {t('patientsPage.addButton')}
                 </Button>
               </Link>

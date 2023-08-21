@@ -10,19 +10,17 @@
     background-color: #fff;
   }
   
-  /* Form header */
   .edit-container h2 {
     margin-bottom: 20px;
     color: #333;
   }
   
-  /* Form labels */
   .form-group label {
     font-weight: bold;
     color: #555;
   }
   
-  /* Inputs and selects */
+
   .form-control {
     width: 96%;
     padding: 10px;

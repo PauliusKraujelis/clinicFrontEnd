@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import LoginRegistration from '../components/LoginRegistration';
 import Picture from '../components/Picture';
 import Footer from '../components/Footer';
 import '../components/picture.css';
@@ -10,9 +9,6 @@ const ClinicsPage = () => {
     <div>
       <Navbar />
       <div className="container">
-        <div className="left-side">
-          <LoginRegistration />
-        </div>
         <div className="right-side">
           <Picture />
         </div>

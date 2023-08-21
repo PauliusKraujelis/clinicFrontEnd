@@ -56,9 +56,21 @@
   "footerElement.email": "Elektroninis paštas:",
   "footerElement.phone": "Telefonas:",
 
+  "logingForms.login": "Prisijungti",
+  "logingForms.register": "Prisiregistruoti",
+
+  "logingForms.email": "El. Pastes:",
+  "logingForms.password": "Slaptazodis:",
+  "logingForms.firstName": "Vardas:",
+  "logingForms.lastName": "Pavarde:",
+
   "buttons.saveButton": "Išsaugoti",
   "buttons.cancelButton": "Atšaukti",
   "buttons.editButton": "Keisti",
-  "buttons.deleteButton": "Trinti"
+  "buttons.deleteButton": "Trinti",
+
+  "buttons.registerButton": "Registruotis",
+  "buttons.loginButton": "Prisijungti",
+  "buttons.LogoutButton": "Atsijungimas"
 
 }
